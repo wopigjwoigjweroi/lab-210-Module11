@@ -1,3 +1,4 @@
+// COMSC-210 | Lab-27 | Jeremiah Ortiz
 #include <iostream>
 #include <string>
 #include <map>
@@ -33,7 +34,7 @@ void add(map<string, tuple<int, string, string>>& villagerInfo) {
 
     getline(cin, catchphrases); 
 
-    villagerInfo[name] = make_tuple(friendship, species, name, catchphrases); 
+    villagerInfo[name] == make_tuple(friendship, species, catchphrases); 
 
     cout << name << " added." << endl; 
 
@@ -50,7 +51,7 @@ void deleteVillage(map<string, tuple<int, string, string>>& villagerInfo) {
 
         cout << name << " is deleted\n"; 
     } else {
-        
+
         cout << "Name not found.\n";
     }
 
@@ -74,12 +75,12 @@ void friendshipIncrease(map<string, tuple<int, string, string>>& villagerInfo) {
                 friendship++; 
 
                 cout << "Friendship level increased to: " << friendship << endl; 
-                
+
             } else {
 
                 cout << "Friendship level has reached it's maximum.\n"; 
          } 
-            
+
             } else {
 
                 cout << name << " doesn't exist.\n"; 
@@ -104,17 +105,17 @@ void friendshipDecrease(map<string, tuple<int, string, string>>& villagerInfo) {
                 friendship--; 
 
                 cout << "Friendship level decreased to: " << friendship << endl; 
-                
+
             } else {
 
                 cout << "Friendship level has reached it's minimum.\n"; 
          } 
-            
+
             } else {
 
                 cout << name << " doesn't exist.\n"; 
         }
-    
+
 }
 
 void search(map<string, tuple<int, string, string>>& villagerInfo) {
@@ -141,15 +142,15 @@ void display(const map<string, tuple<int, string, string>>& villagerInfo) {
     cout << "Villager details\n"; 
 
     for (const auto& pair : villagerInfo) {
-        
+
         cout << pair.first << " [" << get<0>(pair.second) << ", " << get<1>(pair.second) << ", " << get<2>(pair.second) << " ]" << endl; 
     }
 }
 
 int main() {
 
-    map<string, tuple<int, string, string>>& villagerInfo    
-    
+    map<string, tuple<int, string, string>> villager;   
+
     int select; 
 
     do {
@@ -175,23 +176,23 @@ int main() {
         switch (select) {
 
             case 1: 
-                add(villagerInfo); 
+                add(villager); 
             break; 
 
             case 2: 
-                deleteVillage(villagerInfo); 
+                deleteVillage(villager); 
             break; 
 
             case 3: 
-                friendshipIncrease(villagerInfo); 
+                friendshipIncrease(villager); 
             break; 
 
             case 4:
-                friendshipDecrease(villagerInfo); 
+                friendshipDecrease(villager); 
             break;
 
             case 5: 
-                search(villagerInfo); 
+                search(villager); 
             break; 
 
             case 6:
@@ -204,8 +205,8 @@ int main() {
             break; 
         }
 
-        display(villagerInfo); 
-    } while (choice != 6); 
-        
+        display(villager); 
+    } while (select != 6); 
+
     return 0;
 }
