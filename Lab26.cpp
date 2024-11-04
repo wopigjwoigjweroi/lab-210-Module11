@@ -50,7 +50,7 @@ void load_data(const string& filename, vector<string>& v, list<string>& l, set<s
 
     end = high_resolution_clock::now(); 
 
-    auto l_duration = duration_cast<milliseconds>(end - start);
+    auto l_duration = duration_cast<milliseconds>(end - start).count();
 
     cout << "Read - List: " << l_duration.count() << "ms\n"; 
 
@@ -67,7 +67,7 @@ void load_data(const string& filename, vector<string>& v, list<string>& l, set<s
 
     end = high_resolution_clock::now(); 
 
-    auto s_duration = duration_cast<milliseconds>(end - start); 
+    auto s_duration = duration_cast<milliseconds>(end - start).count(); 
 
     cout << "Read - Set: " << s_duration.count() << "ms\n"; 
 
