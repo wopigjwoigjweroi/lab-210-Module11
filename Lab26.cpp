@@ -151,11 +151,23 @@ void preform_op(const vector<string> &v, const list<string> &l, const set<string
 
 int main() {
 
-    vector<string> vs; 
+    long long a[4][3][NUM]; 
 
-    list<string> ls; 
+    for (int i = 0; i < NUM; i++) {
 
-    set<string> ss; 
+        vector<string> vs; 
+
+        list<string> ls; 
+
+        set<string> ss; 
+        
+        load_data(FILENAME, vs, ls, ss);
+
+        long long temp_a[4][3]; 
+
+        preform_op(vs, ls, ss, temp_a);
+
+    } 
 
     load_data(FILENAME, vs, ls, ss); 
 
