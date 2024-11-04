@@ -33,9 +33,7 @@ void load_data(const string& filename, vector<string>& v, list<string>& l, set<s
 
     auto end = high_resolution_clock::now(); 
 
-    auto v_duration = duration_cast<milliseconds>(end - start).count();
-
-    cout << "Read - Vector: " << v_duration.count() << "ms\n"; 
+    auto v_duration = duration_cast<milliseconds>(end - start).count(); 
 
     file.clear();
 
@@ -52,8 +50,6 @@ void load_data(const string& filename, vector<string>& v, list<string>& l, set<s
 
     auto l_duration = duration_cast<milliseconds>(end - start).count();
 
-    cout << "Read - List: " << l_duration.count() << "ms\n"; 
-
     file.clear(); 
 
     file.seekg(0); 
@@ -67,9 +63,7 @@ void load_data(const string& filename, vector<string>& v, list<string>& l, set<s
 
     end = high_resolution_clock::now(); 
 
-    auto s_duration = duration_cast<milliseconds>(end - start).count(); 
-
-    cout << "Read - Set: " << s_duration.count() << "ms\n"; 
+    auto s_duration = duration_cast<milliseconds>(end - start).count();  
 
     file.close(); 
 }
@@ -86,8 +80,6 @@ void preform_op(const vector<string> &v, const list<string> &l, const set<string
 
     auto vc_duration = duration_cast<milliseconds>(end - start); 
 
-    cout << "Sort - Vector: " << vc_duration.count() << "ms\n"; 
-
     list<string> l_cop = l;
 
     start = high_resolution_clock::now(); 
@@ -96,11 +88,7 @@ void preform_op(const vector<string> &v, const list<string> &l, const set<string
 
     end = high_resolution_clock::now(); 
 
-    auto ls_duration = duration_cast<milliseconds>(end - start); 
-
-    cout << "Sort - List: " << ls_duration.count() << "ms\n"; 
-
-    cout << "Sort - Set: -1 ms" << endl; 
+    auto ls_duration = duration_cast<milliseconds>(end - start);  
 
     start = high_resolution_clock::now(); 
 
@@ -108,9 +96,7 @@ void preform_op(const vector<string> &v, const list<string> &l, const set<string
 
     end = high_resolution_clock::now();
 
-    auto vc_ins = duration_cast<milliseconds>(end - start);
-
-    cout << "Insert - Vector: " << vc_ins.count() << "ms\n"; 
+    auto vc_ins = duration_cast<milliseconds>(end - start); 
 
     start = high_resolution_clock::now(); 
 
@@ -122,9 +108,7 @@ void preform_op(const vector<string> &v, const list<string> &l, const set<string
 
     end = high_resolution_clock::now(); 
 
-    auto lc_ins = duration_cast<milliseconds>(end - start); 
-
-    cout << "Insert - List: " << lc_ins.count() << "ms\n"; 
+    auto lc_ins = duration_cast<milliseconds>(end - start);  
 
     set<string> s_cop = s; 
 
@@ -136,17 +120,13 @@ void preform_op(const vector<string> &v, const list<string> &l, const set<string
 
     auto sc_ins = duration_cast<milliseconds>(end - start); 
 
-    cout << "Insert - Set: " << sc_ins.count() << "ms\n";
-
     start = high_resolution_clock::now(); 
 
     v_cop.erase(v_cop.begin() + v_cop.size() / 2); 
 
     end = high_resolution_clock::now(); 
 
-    auto vector_delete = duration_cast<milliseconds>(end - start); 
-
-    cout << "Delete - Vector: " << vector_delete.count() << "ms\n"; 
+    auto vector_delete = duration_cast<milliseconds>(end - start);  
 
     start = high_resolution_clock::now(); 
 
@@ -158,9 +138,7 @@ void preform_op(const vector<string> &v, const list<string> &l, const set<string
 
     end = high_resolution_clock::now(); 
 
-    auto list_delete = duration_cast<milliseconds>(end - start); 
-
-    cout << "Delete - List: " << list_delete.count() << "ms\n"; 
+    auto list_delete = duration_cast<milliseconds>(end - start);  
 
     start = high_resolution_clock::now();
 
@@ -169,8 +147,6 @@ void preform_op(const vector<string> &v, const list<string> &l, const set<string
     end = high_resolution_clock::now(); 
 
     auto set_delete = duration_cast<milliseconds>(end - start); 
-
-    cout << "Delete - Set: " << set_delete.count() << "ms\n";
 }
 
 int main() {
