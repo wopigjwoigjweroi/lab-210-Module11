@@ -153,7 +153,7 @@ int main() {
 
     long long a[4][3][NUM]; 
 
-    for (int i = 0; i < NUM; i++) {
+    for (int i = 0; i < NUM; ++i) {
 
         vector<string> vs; 
 
@@ -167,11 +167,42 @@ int main() {
 
         preform_op(vs, ls, ss, temp_a);
 
+    for (int j = 0; j < 4; ++j) {
+
+        for (int k = 0; k < 3; ++k) {
+
+            a[j][k] = temp_a[j][k]; 
+
+        } 
+    }
+
     } 
 
-    load_data(FILENAME, vs, ls, ss); 
+    cout << "Number of simualtions: " << NUM << endl << "Operation   Vector   List   Set\n";  
 
-    preform_op(vs, ls, ss); 
+    const char* operation[4] = {"Read", "Sort", "Insert", "Delete"}; 
+
+    for (int j = 0; j < 4; ++j) {
+
+        cout << setw(10) << operation[j]
+
+            for (int k = 0; k < 3; ++k) {
+
+            long long sum = 0; 
+
+            for (int i = 0; i < NUM; ++i) {
+
+                sum += a[j][k][i];
+            }
+
+            long long average = sum / NUM; 
+
+            cout << setw(12) << (average == 1- ? 0 : average);
+
+        }
+            cout << endl; 
+    }
+    
 
     return 0;
 }
