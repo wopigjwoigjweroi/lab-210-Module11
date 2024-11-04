@@ -34,7 +34,7 @@ void add(map<string, tuple<int, string, string>>& villagerInfo) {
 
     getline(cin, catchphrases); 
 
-    villagerInfo[name] == make_tuple(friendship, species, catchphrases); 
+    villagerInfo[name] = make_tuple(friendship, species, catchphrases); 
 
     cout << name << " added." << endl; 
 
