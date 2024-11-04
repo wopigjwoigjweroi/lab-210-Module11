@@ -94,7 +94,7 @@ void preform_op(const vector<string> &v, const list<string> &l, const set<string
 
     for (int i = 0; i < 1000; ++i) {
 
-        v_cop.insert(v_cop.begin() + v_cop.size() / 2, "TESTCODE");
+        v_cop.insert(v_cop.begin() + v_cop.size() / 2, "TESTCODE" + to_string(i));
     }
 
     end = high_resolution_clock::now();
@@ -109,7 +109,7 @@ void preform_op(const vector<string> &v, const list<string> &l, const set<string
 
         advance(lc, l_cop.size() / 2);
 
-        l_cop.insert(lc, "TESTCODE"); 
+        l_cop.insert(lc, "TESTCODE" + to_string(i)); 
     }
 
     end = high_resolution_clock::now(); 
@@ -122,7 +122,7 @@ void preform_op(const vector<string> &v, const list<string> &l, const set<string
 
     for (int i = 0; i < 1000; ++i) {
 
-        s_cop.insert("TESTCODE");
+        s_cop.insert("TESTCODE" + to_string(i));
     } 
 
     end = high_resolution_clock::now(); 
@@ -144,7 +144,7 @@ void preform_op(const vector<string> &v, const list<string> &l, const set<string
 
     for (int i = 0; i < 1000; ++i) {
 
-        lc = l_cop.begin(); 
+        auto lc = l_cop.begin(); 
 
         advance(lc, l_cop.size() / 2);
 
@@ -159,7 +159,7 @@ void preform_op(const vector<string> &v, const list<string> &l, const set<string
 
     for (int i = 0; i < 1000; ++i) {
 
-        s_cop.erase(s_cop.find("TESTCODE"));
+        s_cop.erase(s_cop.find("TESTCODE" + to_string(i)));
     }
 
     end = high_resolution_clock::now(); 
@@ -220,7 +220,6 @@ int main() {
         }
             cout << endl; 
     }
-    
 
     return 0;
 }
