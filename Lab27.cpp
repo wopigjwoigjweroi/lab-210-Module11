@@ -117,6 +117,25 @@ void friendshipDecrease(map<string, tuple<int, string, string>>& villagerInfo) {
     
 }
 
+void search(map<string, tuple<int, string, string>>& villagerInfo) {
+
+    string name; 
+
+    cout << "Enter the name of the villager: ";
+    cin >> name; 
+
+    auto a = villagerInfo.find(name); 
+
+    if (a != villagerInfo.end()) {
+
+        cout << name << " [" << get<0>(it->second) << ", " << get<1>(it->second) << " , \" << get<2>(it->second) << "\]" << endl; 
+
+    } else {
+
+        cout << name << "doesn't exist.\n"; 
+    }
+}
+
 int main() {
   
 
