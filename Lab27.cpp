@@ -148,6 +148,64 @@ void display(const map<string, tuple<int, string, string>>& villagerInfo) {
 
 int main() {
 
+    map<string, tuple<int, string, string>>& villagerInfo    
     
+    int select; 
+
+    do {
+
+
+        cout << "Menu: \n"; 
+
+        cout << "1. Add Villager\n"; 
+
+        cout << "2. Delete Villager\n"; 
+
+        cout << "3. Increase Friendship\n"; 
+
+        cout << "4. Decrease Friendship\n"; 
+
+        cout << "5. Search for Villager\n"; 
+
+        cout << "6. Quit\n"; 
+
+        cout << "Enter Choice: ";
+            cin >> select; 
+
+        switch (select) {
+
+            case 1: 
+                add(villagerInfo); 
+            break; 
+
+            case 2: 
+                deleteVillage(villagerInfo); 
+            break; 
+
+            case 3: 
+                friendshipIncrease(villagerInfo); 
+            break; 
+
+            case 4:
+                friendshipDecrease(villagerInfo); 
+            break;
+
+            case 5: 
+                search(villagerInfo); 
+            break; 
+
+            case 6:
+
+            cout << "Bye! \n"; 
+             break; 
+
+            default: 
+                cout << "Invalid!\n";
+            break; 
+        }
+
+        display(villagerInfo); 
+    } while (choice != 6); 
+        
     return 0;
 }
