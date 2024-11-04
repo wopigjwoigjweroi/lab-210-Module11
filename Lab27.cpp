@@ -143,7 +143,7 @@ void display(const map<string, tuple<int, string, string>>& villagerInfo) {
 
     for (const auto& pair : villagerInfo) {
 
-        cout << pair.first << " [" << get<0>(pair.second) << ", " << get<1>(pair.second) << ", " << get<2>(pair.second) << " ]" << endl; 
+        cout << pair.first << " [" << get<0>(pair.second) << ", " << get<1>(pair.second) << ", " << get<2>(pair.second) << "]" << endl; 
     }
 }
 
@@ -154,8 +154,6 @@ int main() {
     int select; 
 
     do {
-
-
         cout << "Menu: \n"; 
 
         cout << "1. Add Villager\n"; 
@@ -206,6 +204,7 @@ int main() {
         }
 
         display(villager); 
+        
     } while (select != 6); 
 
     return 0;
