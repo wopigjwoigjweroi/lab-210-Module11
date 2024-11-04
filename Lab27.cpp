@@ -88,6 +88,32 @@ void friendshipIncrease(map<string, tuple<int, string, string>>& villagerInfo) {
 
 void friendshipDecrease(map<string, tuple<int, string, string>>& villagerInfo) {
 
+ string name; 
+
+    cout << "Enter villager name for friendship increase: ";
+    cin >> name; 
+
+    auto a = villagerInfo.find(name); 
+
+        if (a != villagerInfo.end()) {
+
+            int& friendship = get<0>(a->second);
+
+            if (friendship < 10) {
+
+                friendship++; 
+
+                cout << "Friendship level increased to: " << friendship << endl; 
+                
+            } else {
+
+                cout << "Friendship level has reached it's maximum.\n"; 
+         } 
+            
+            } else {
+
+                cout << name << " doesn't exist.\n"; 
+        }
     
 }
 
