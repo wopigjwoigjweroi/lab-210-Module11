@@ -128,7 +128,7 @@ void search(map<string, tuple<int, string, string>>& villagerInfo) {
 
     if (a != villagerInfo.end()) {
 
-        cout << name << " [" << get<0>(it->second) << ", " << get<1>(it->second) << " , \" << get<2>(it->second) << "\]" << endl; 
+        cout << name << " [" << get<0>(a->second) << ", " << get<1>(a->second) << " , " << get<2>(a->second) << "]" << endl; 
 
     } else {
 
@@ -136,8 +136,18 @@ void search(map<string, tuple<int, string, string>>& villagerInfo) {
     }
 }
 
-int main() {
-  
+void display(const map<string, tuple<int, string, string>>& villagerInfo) {
 
+    cout << "Villager details\n"; 
+
+    for (const auto& pair : villagerInfo) {
+        
+        cout << pair.first << " [" << get<0>(pair.second) << ", " << get<1>(pair.second) << ", " << get<2>(pair.second) << " ]" << endl; 
+    }
+}
+
+int main() {
+
+    
     return 0;
 }
