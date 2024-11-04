@@ -92,7 +92,10 @@ void preform_op(const vector<string> &v, const list<string> &l, const set<string
 
     start = high_resolution_clock::now(); 
 
-    v_cop.insert(v_cop.begin() + v_cop.size() / 2, "TESTCODE");
+    for (int i = 0; i < 1000; ++i) {
+
+        v_cop.insert(v_cop.begin() + v_cop.size() / 2, "TESTCODE");
+    }
 
     end = high_resolution_clock::now();
 
@@ -100,11 +103,14 @@ void preform_op(const vector<string> &v, const list<string> &l, const set<string
 
     start = high_resolution_clock::now(); 
 
-    auto lc = l_cop.begin(); 
+    for (int i = 0; i < 1000; ++i) {
 
-    advance(lc, l_cop.size() / 2); 
+        auto lc = l_cop.begin();
 
-    l_cop.insert(lc, "TESTCODE");
+        advance(lc, l_cop.size() / 2);
+
+        l_cop.insert(lc, "TESTCODE"); 
+    }
 
     end = high_resolution_clock::now(); 
 
@@ -114,7 +120,10 @@ void preform_op(const vector<string> &v, const list<string> &l, const set<string
 
     start = high_resolution_clock::now(); 
 
-    s_cop.insert("TESTCODE"); 
+    for (int i = 0; i < 1000; ++i) {
+
+        s_cop.insert("TESTCODE");
+    } 
 
     end = high_resolution_clock::now(); 
 
@@ -122,7 +131,10 @@ void preform_op(const vector<string> &v, const list<string> &l, const set<string
 
     start = high_resolution_clock::now(); 
 
-    v_cop.erase(v_cop.begin() + v_cop.size() / 2); 
+    for (int i = 0; i < 1000; ++i) {
+
+        v_cop.erase(v_cop.begin() + v_cop.size() / 2);
+    } 
 
     end = high_resolution_clock::now(); 
 
@@ -130,11 +142,14 @@ void preform_op(const vector<string> &v, const list<string> &l, const set<string
 
     start = high_resolution_clock::now(); 
 
-    lc = l_cop.begin(); 
+    for (int i = 0; i < 1000; ++i) {
 
-    advance(lc, l_cop.size() / 2); 
+        lc = l_cop.begin(); 
 
-    l_cop.erase(lc);
+        advance(lc, l_cop.size() / 2);
+
+        l_cop.erase(lc); 
+    }
 
     end = high_resolution_clock::now(); 
 
@@ -142,7 +157,10 @@ void preform_op(const vector<string> &v, const list<string> &l, const set<string
 
     start = high_resolution_clock::now();
 
-    s_cop.erase(s_cop.find("TESTCODE"));
+    for (int i = 0; i < 1000; ++i) {
+
+        s_cop.erase(s_cop.find("TESTCODE"));
+    }
 
     end = high_resolution_clock::now(); 
 
