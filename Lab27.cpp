@@ -90,7 +90,7 @@ void friendshipDecrease(map<string, tuple<int, string, string>>& villagerInfo) {
 
  string name; 
 
-    cout << "Enter villager name for friendship increase: ";
+    cout << "Enter villager name for friendship decrease: ";
     cin >> name; 
 
     auto a = villagerInfo.find(name); 
@@ -99,15 +99,15 @@ void friendshipDecrease(map<string, tuple<int, string, string>>& villagerInfo) {
 
             int& friendship = get<0>(a->second);
 
-            if (friendship < 10) {
+            if (friendship > 0) {
 
-                friendship++; 
+                friendship--; 
 
-                cout << "Friendship level increased to: " << friendship << endl; 
+                cout << "Friendship level decreased to: " << friendship << endl; 
                 
             } else {
 
-                cout << "Friendship level has reached it's maximum.\n"; 
+                cout << "Friendship level has reached it's minimum.\n"; 
          } 
             
             } else {
