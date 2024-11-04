@@ -1,4 +1,4 @@
-// COMSC-210 | Lab-25 | Jeremiah Ortiz
+// COMSC-210 | Lab-26 | Jeremiah Ortiz
 #include <iostream>
 #include <fstream>
 #include <chrono>
@@ -13,6 +13,7 @@ using namespace std;
 using namespace std::chrono; 
 
 const string FILENAME = "codes.txt"; 
+const int NUM = 15; 
 
 void load_data(const string& filename, vector<string>& v, list<string>& l, set<string> s); 
 void preform_op(const vector<string> &v, const list<string> &l, const set<string> &s); 
@@ -32,7 +33,7 @@ void load_data(const string& filename, vector<string>& v, list<string>& l, set<s
 
     auto end = high_resolution_clock::now(); 
 
-    auto v_duration = duration_cast<milliseconds>(end - start);
+    auto v_duration = duration_cast<milliseconds>(end - start).count();
 
     cout << "Read - Vector: " << v_duration.count() << "ms\n"; 
 
