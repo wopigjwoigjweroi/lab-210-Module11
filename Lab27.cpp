@@ -78,11 +78,11 @@ void friendshipIncrease(map<string, tuple<int, string, string>>& villagerInfo) {
             } else {
 
                 cout << "Friendship level has reached it's maximum.\n"; 
-                
+         } 
+            
             } else {
 
                 cout << name << " doesn't exist.\n"; 
-            }
         }
 }
 
