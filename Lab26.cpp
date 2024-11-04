@@ -171,7 +171,7 @@ int main() {
 
         for (int k = 0; k < 3; ++k) {
 
-            a[j][k] = temp_a[j][k]; 
+            a[j][k][i] = temp_a[j][k]; 
 
         } 
     }
@@ -184,7 +184,7 @@ int main() {
 
     for (int j = 0; j < 4; ++j) {
 
-        cout << setw(10) << operation[j]
+        cout << setw(10) << operation[j];
 
             for (int k = 0; k < 3; ++k) {
 
@@ -197,7 +197,7 @@ int main() {
 
             long long average = sum / NUM; 
 
-            cout << setw(12) << (average == 1- ? 0 : average);
+            cout << setw(12) << (average == -1 ? 0 : average);
 
         }
             cout << endl; 
