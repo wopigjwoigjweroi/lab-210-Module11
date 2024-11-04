@@ -1,16 +1,17 @@
 #include <iostream>
+#include <string>
 #include <map>
 #include <tuple>
 using namespace std;
 
 void display(const map<string, tuple<int, string, string>>& villagerInfo);
-void add(map<string, tuple<int, string, stirng>>& villagerInfo); 
-void delete(map<string, tuple<int, string, stirng>>& villagerInfo); 
+void add(map<string, tuple<int, string, string>>& villagerInfo); 
+void deleteVillage(map<string, tuple<int, string, string>>& villagerInfo); 
 void friendshipIncrease(map<string, tuple<int, string, stirng>>& villagerInfo); 
 void friendshipDecrease(map<string, tuple<int, string, stirng>>& villagerInfo); 
-void search(map<string, tuple<int, string, stirng>>& villagerInfo); 
+void search(map<string, tuple<int, string, string>>& villagerInfo); 
 
-void add(map<string, tuple<int, string, stirng>>& villagerInfo) {
+void add(map<string, tuple<int, string, string>>& villagerInfo) {
 
     int friendship; 
 
@@ -30,7 +31,7 @@ void add(map<string, tuple<int, string, stirng>>& villagerInfo) {
 
     cin.ignore();
 
-    getline(cin, catchphrase); 
+    getline(cin, catchphrases); 
 
     villagerInfo[name] = make_tuple(friendship, species, name, catchphrases); 
 
