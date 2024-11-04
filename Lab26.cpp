@@ -33,7 +33,7 @@ void load_data(const string& filename, vector<string>& v, list<string>& l, set<s
 
     auto end = high_resolution_clock::now(); 
 
-    auto v_duration = duration_cast<milliseconds>(end - start).count(); 
+    auto v_duration = duration_cast<nanoseconds>(end - start).count(); 
 
     file.clear();
 
@@ -48,7 +48,7 @@ void load_data(const string& filename, vector<string>& v, list<string>& l, set<s
 
     end = high_resolution_clock::now(); 
 
-    auto l_duration = duration_cast<milliseconds>(end - start).count();
+    auto l_duration = duration_cast<nanoseconds>(end - start).count();
 
     file.clear(); 
 
@@ -63,7 +63,7 @@ void load_data(const string& filename, vector<string>& v, list<string>& l, set<s
 
     end = high_resolution_clock::now(); 
 
-    auto s_duration = duration_cast<milliseconds>(end - start).count();  
+    auto s_duration = duration_cast<nanoseconds>(end - start).count();  
 
     file.close(); 
 }
@@ -78,7 +78,7 @@ void preform_op(const vector<string> &v, const list<string> &l, const set<string
 
     auto end = high_resolution_clock::now(); 
 
-    a[0][1] = duration_cast<milliseconds>(end - start).count(); 
+    a[0][1] = duration_cast<nanoseconds>(end - start).count(); 
 
     list<string> l_cop = l;
 
@@ -88,7 +88,7 @@ void preform_op(const vector<string> &v, const list<string> &l, const set<string
 
     end = high_resolution_clock::now(); 
 
-    a[1][1] = duration_cast<milliseconds>(end - start).count();  
+    a[1][1] = duration_cast<nanoseconds>(end - start).count();  
 
     start = high_resolution_clock::now(); 
 
@@ -96,7 +96,7 @@ void preform_op(const vector<string> &v, const list<string> &l, const set<string
 
     end = high_resolution_clock::now();
 
-    a[2][0] = duration_cast<milliseconds>(end - start).count(); 
+    a[2][0] = duration_cast<nanoseconds>(end - start).count(); 
 
     start = high_resolution_clock::now(); 
 
@@ -108,7 +108,7 @@ void preform_op(const vector<string> &v, const list<string> &l, const set<string
 
     end = high_resolution_clock::now(); 
 
-    a[2][1] = duration_cast<milliseconds>(end - start).count();  
+    a[2][1] = duration_cast<nanoseconds>(end - start).count();  
 
     set<string> s_cop = s; 
 
@@ -118,7 +118,7 @@ void preform_op(const vector<string> &v, const list<string> &l, const set<string
 
     end = high_resolution_clock::now(); 
 
-    a[2][2] = duration_cast<milliseconds>(end - start).count(); 
+    a[2][2] = duration_cast<nanoseconds>(end - start).count(); 
 
     start = high_resolution_clock::now(); 
 
@@ -126,7 +126,7 @@ void preform_op(const vector<string> &v, const list<string> &l, const set<string
 
     end = high_resolution_clock::now(); 
 
-    a[3][0] = duration_cast<milliseconds>(end - start).count();  
+    a[3][0] = duration_cast<nanoseconds>(end - start).count();  
 
     start = high_resolution_clock::now(); 
 
@@ -138,7 +138,7 @@ void preform_op(const vector<string> &v, const list<string> &l, const set<string
 
     end = high_resolution_clock::now(); 
 
-    a[3][1] = duration_cast<milliseconds>(end - start).count();  
+    a[3][1] = duration_cast<nanoseconds>(end - start).count();  
 
     start = high_resolution_clock::now();
 
@@ -146,7 +146,7 @@ void preform_op(const vector<string> &v, const list<string> &l, const set<string
 
     end = high_resolution_clock::now(); 
 
-    a[3][2] = duration_cast<milliseconds>(end - start).count(); 
+    a[3][2] = duration_cast<nanoseconds>(end - start).count(); 
 }
 
 int main() {
