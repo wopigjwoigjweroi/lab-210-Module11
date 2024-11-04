@@ -10,6 +10,34 @@ void friendshipIncrease(map<string, tuple<int, string, stirng>>& villagerInfo);
 void friendshipDecrease(map<string, tuple<int, string, stirng>>& villagerInfo); 
 void search(map<string, tuple<int, string, stirng>>& villagerInfo); 
 
+void add(map<string, tuple<int, string, stirng>>& villagerInfo) {
+
+    int friendship; 
+
+    string name, species, catchphrases; 
+
+    cout << "Villager Name: "; 
+    cin >> name; 
+
+    cout << "Friendship Level: "; 
+    cin >> friendship; 
+
+    cout << "Species: "; 
+    cin >> species;
+
+    cout << "Catchphrase: "; 
+    cin >> catchphrases; 
+
+    cin.ignore();
+
+    getline(cin, catchphrase); 
+
+    villagerInfo[name] = make_tuple(friendship, species, name, catchphrases); 
+
+    cout << name << " added." << endl; 
+
+}
+
 int main() {
     // declarations
     map<string, vector<string>> villagerColors;
